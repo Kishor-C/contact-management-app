@@ -1,0 +1,48 @@
+<div>
+  <h2>Create a profile</h2>
+  <hr>
+  <form (ngSubmit) = "createProfile(profileForm.value)" #profileForm = "ngForm">
+    <div class = "form-group">
+        <div class = "row">
+            <div class = "col-2">
+              <input type = "text" name = "name" [(ngModel)] = "name" class = "form-control" placeholder="Enter Name">
+            </div>
+            <div class = "col-2">
+              <input type = "password" name = "password" [(ngModel)] = "password" class = "form-control" placeholder="Enter password">
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-2">
+             <label>Phone</label>
+            </div>
+        </div>
+        <div class = "row">
+          <div class = "col-4">
+           <input type = "number" name = "phone" [(ngModel)] = "phone" class = "form-control" placeholder="Mobile number">     
+          </div>
+        </div>
+        <div class = "row">
+            <div class = "col-2">
+             <label>Birthday</label>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-2">
+                <input type = "date" name = "dob" [(ngModel)]= "dob" class = "form-control">
+            </div>
+        </div>
+       <div class = "row">
+         <div class = "col-4">
+           <p>By clicking Sign Up, you agree to our <a href = "#">Terms</a> and <a href = "#">Policy</a></p>
+         </div>
+       </div>
+        <div class = "row">
+          <div class = "col-2">
+            <input type = "submit" value = "Sign Up" class = "btn btn-primary">
+          </div>
+        </div>      
+    </div>
+  </form>
+</div>
+<hr>
+<a routerLink = "login">Back to login</a>

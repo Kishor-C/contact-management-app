@@ -1,0 +1,17 @@
+<div>
+    <h3 class = "text-secondary">Update Password</h3>
+    <form>
+      <div class = "row">
+        <div class = "col-4">
+            <input type = "password" name = "name" [(ngModel)] = "password" 
+            class = "form-control" placeholder="Enter new password">
+        </div>
+        <div class = "col-2">
+          <input type = "button" value = "Update Password" (click) = "update(password)" class = "btn btn-secondary">
+        </div>
+      </div>
+    </form>
+    <hr>
+    <h5 *ngIf = "updateStatus" class = "text-success">{{updateStatus}}</h5>
+  </div>
+  

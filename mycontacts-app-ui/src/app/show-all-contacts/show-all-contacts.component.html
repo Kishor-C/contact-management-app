@@ -1,0 +1,15 @@
+<div>
+  <h3 class = "text-secondary">All Contacts</h3> <hr>
+  <div *ngIf = "contactCountMessage"><h6 class = "text-secondary">{{contactCountMessage}}</h6> <hr></div>
+  <div *ngIf = "contactDeleteMessage"><h6 class = "text-success">{{contactDeleteMessage}}</h6> <hr></div>
+  <table *ngIf = "contacts" class = "table table-striped">
+    <tr>
+      <th>#</th><th>Name</th><th>Phone Number</th><th>X</th>
+    </tr>
+    <tr *ngFor = "let contact of contacts; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{contact.name}}</td><td>{{contact.phone}}</td>
+      <td><input type = "button" (click) = "deleteContact(contact)" class = "btn btn-danger" value = "Delete"></td>
+    </tr>
+  </table>
+</div>

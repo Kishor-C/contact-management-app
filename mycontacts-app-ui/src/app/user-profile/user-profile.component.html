@@ -1,0 +1,44 @@
+<div class = "container-fluid">
+  <div >
+    <nav class = "navbar nav-default navbar-expand-sm">
+      <ul class = "nav navbar-nav ml-auto">
+          <li><a routerLink = "dashboard" class = "mr-3">Dashboard</a></li>
+          <li><a routerLink = "addContacts" class = "mr-3">Add contacts</a></li>
+          <li><a routerLink = "showAllContacts" class = "mr-3">Show all contacts</a></li>
+          <li><a routerLink = "searchContact" class = "mr-3">Search contacts</a></li>
+          <li class="dropdown">
+              <a class="dropdown-toggle mr-3" data-toggle="dropdown" href="#">Settings<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a routerLink = "update" class = "mr-3">Change Password</a></li>
+                  <li><a routerLink = "delete" class = "mr-3">Delete Profile</a></li>
+                  <li><a routerLink = "logout" class = "mr-3" (click) = "logout()">Logout</a></li>
+              </ul>
+           </li>
+      </ul>
+    </nav>
+  </div>
+  <hr>
+  <div class = "row">
+    <div class = "col-3" *ngIf = "profile">
+        <h6 class = "text-secondary">Profile summary!</h6>
+        <hr>
+        <table class="table table-borderless">
+          <tr>
+            <th>Birthday:</th> <td>{{profile.dob | date : "d/MM/yyyy"}}</td>
+          </tr>
+          <tr>
+              <th>Mobile:</th><td>{{profile.phone}}</td>
+          </tr>
+	
+        </table>
+    </div>
+    <div class = "col-1">
+        <hr style="width: 1px; height: 500px;  background:gainsboro; border: none;" />
+    </div>
+    <div class = "col-8">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+</div>
+
